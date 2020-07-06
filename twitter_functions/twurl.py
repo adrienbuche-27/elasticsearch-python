@@ -1,4 +1,5 @@
 import urllib.request, urllib.parse, urllib.error
+import requests
 import oauth
 import hidden
 
@@ -18,7 +19,23 @@ def augment(url, parameters):
                                consumer, token)
     return oauth_request.to_url()
 
-
+def augment_search(url, parameters):
+    secrets = hidden.oauth()
+    consumer = oauth.OAuthConsumer(secrets['consumer_key'],
+                                   secrets['consumer_secret'])
+    
+    r = requests.post('https://api.twitter.com/oauth2/token',
+                  auth=(consumer.key, consumer.secret),
+                  headers={'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+                  data='grant_type=client_credentials').json()
+    
+    if r['token_type'] == 'bearer':
+        bearer = r['access_token']
+        return requests.get(url, headers={'Authorization': 'Bearer ' + bearer}, params=parameters)
+    else:
+        bearer = None
+        return None
+    
 def test_me():
     print('* Calling Twitter...')
     url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
