@@ -1,22 +1,25 @@
-# elasticsearch-python
+<img src="asses/img/readme_title.png" width=auto height=100 align=center>
 
-Within this repository, I'll explore how to efficiently use Elasticsearch within python, first using script and then developping a User Inteface to do Web scraping and interacting with the data stored in Elasticsearch.
+Throughout this porject, I want to stregthen my knowlegde of Elasticsearch while building a intuitive UI application with Dash to interact with Elasticsearch indices.
 
-<table>
-  <tr>
-    <td><img src="img/python-logo.png" width=270 height=270></td>
-    <td><img src="img/elasticsearch-logo.png" width=270 height=270></td>
-  </tr>
- </table>
 
- ## Launching ElasticSearch & Kibana
+# Launching ElasticSearch & Dash
 
- from the terminal, navigate to the ElasticSearch folder, then run
+To use the application, you will have to start the Elasticsearch Instance and then run the Dash App.
 
- `bin\elasticsearch` to start the ElasticSearch instance.
+## Elasticsearch
 
- Once Elasticsearch is running, we have to launch Kibana, which is the UI for exploring ElasticSearch. Similarly to elasticsearch, we activate kibana using the following command:
+After downloading the Elasticsearch [here](https://www.elastic.co/fr/downloads/elasticsearch) and placing the unzipped directory within the current project, run the following command to start Elasticsearch.
 
- `bin\kibana`
+ `bin\elasticsearch`
 
- By default, Elasticsearch is available at local host 9200 and kibana is available at local host 5601.
+## Dash by Plotly
+
+Then, to run the application, all you have to do is to run the following command at the root of your project.
+
+`python3 app.py`
+
+To know about the information about the necessary packages that you need, check the "Requirements" section.
+
+
+# Requirements
