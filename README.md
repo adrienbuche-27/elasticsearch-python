@@ -1,4 +1,4 @@
-<img src="asses/img/readme_title.png" width=auto height=100 align=center>
+<img src="assets/img/readme_title.png" width=auto height=100 align=center>
 
 Throughout this porject, I want to stregthen my knowlegde of Elasticsearch while building a intuitive UI application with Dash to interact with Elasticsearch indices.
 
